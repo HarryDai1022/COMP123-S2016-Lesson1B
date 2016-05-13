@@ -11,7 +11,7 @@ using System.Threading.Tasks;
  * 
  * Descriptions: THis program demonstrates GitHub and version control best pratices.
  * 
- * Version: 0.3 - Updated comments for the driver class Program
+ * Version: 0.4 - Extracted outputString to console from the GetUserName method
  */
 
 namespace COMP123_S2016_Lesson1B
@@ -44,14 +44,37 @@ namespace COMP123_S2016_Lesson1B
         {
             //Initialize variables
             string UserName = "";
-            
-            Console.Write("Enter user name: ");
+
+            OutPutStringToConsole("Enter username: ", false);
             UserName = Console.ReadLine();
 
-            Console.WriteLine("/n*************************");
-            Console.WriteLine("You entered: " + UserName);
+            Console.WriteLine("\n*************************");
+            Console.WriteLine("You entered: " + UserName + "\n");
 
             return UserName;
+        }
+        /*
+         * This method writes a string to the console. Parameters allow the user to add a newline character
+         * 
+         * @method OutPutStringToConsole
+         * @param (string) outputString
+         * @param (bool) hasNewLine
+         * @return (string) outputString
+         */
+        private static string OutPutStringToConsole(string outputString, bool hasNewLine)
+        {
+            if(hasNewLine)
+            {
+                Console.WriteLine(outputString);
+            }
+            else
+            {
+                Console.Write(outputString);
+            }
+
+            Console.Write(outputString);
+
+            return outputString;
         }
     }
 }
